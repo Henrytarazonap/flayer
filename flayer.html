@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flyer Programa Nacional de Cuidado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e0f7fa, #ffffff);
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+    .flyer {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      padding: 3rem;
+      border-radius: 30px;
+      max-width: 750px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(0,0,0,0.05);
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #00695c;
+    }
+    h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #00796b;
+      font-weight: 700;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      font-weight: 400;
+      color: #555;
+    }
+    .btn {
+      background: linear-gradient(135deg, #0288d1, #26c6da);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 20px rgba(2, 136, 209, 0.5);
+      transition: all 0.4s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover {
+      background: linear-gradient(135deg, #007bb5, #00acc1);
+      transform: scale(1.05);
+    }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+    .more-content {
+      display: none;
+      margin-top: 2rem;
+      max-width: 750px;
+      animation: fadeInMore 1s ease-in-out;
+    }
+    @keyframes fadeInMore {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .more-content img {
+      width: 70%;
+      max-width: 350px;
+      border-radius: 15px;
+      margin-top: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      border: 2px solid #b2ebf2;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInImage 1s forwards;
+    }
+    @keyframes fadeInImage {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.6rem; }
+      p  { font-size: 1rem; }
+      .more-content img { width: 85%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="flyer">
+    <h1>Programa Nacional de Cuidado</h1>
+    <h2>«Un país que cuida, un país que florece»</h2>
+    <p>
+      Impulsamos una nueva organización social del cuidado, reconociendo su valor para la vida, la equidad y la sostenibilidad.<br><br>
+      ¡Cuidar es un derecho fundamental y una responsabilidad colectiva!
+    </p>
+    <button class="btn" onclick="mostrarContenido()">Descubre más</button>
+    <footer>Ministerio de Igualdad y Equidad | 2024</footer>
+  </div>
+
+  <div class="more-content" id="moreContent">
+    <h2>Sistema Nacional de Cuidados</h2>
+    <p>Un modelo integral que articula servicios, políticas y acciones para reconocer, redistribuir y valorar el trabajo de cuidado en Colombia.</p>
+    <img src="https://i.pinimg.com/736x/83/ad/df/83addfd17584f0f400100307bfe34a8f.jpg" alt="Sistema Nacional de Cuidados">
+
+    <h2>Cambio Cultural</h2>
+    <p>Promovemos la corresponsabilidad entre hombres y mujeres, impulsando nuevas masculinidades, prácticas de paz y solidaridad en las comunidades.</p>
+    <img src="https://i.pinimg.com/736x/83/60/0c/83600c90d74d70fe1c002c79d2e08800.jpg" alt="Cambio Cultural">
+
+    <h2>Alianzas Comunitarias</h2>
+    <p>Fortalecemos las prácticas de cuidado ancestrales y comunitarias, reconociendo saberes y territorios como espacios de vida y sostenibilidad.</p>
+    <img src="https://i.pinimg.com/736x/9d/1b/46/9d1b4659a9fa0f72ab54af69c1479c3d.jpg" alt="Alianzas comunitarias">
+  </div>
+
+  <script>
+    function mostrarContenido() {
+      const content = document.getElementById('moreContent');
+      content.style.display = 'block';
+      window.scrollTo({
+        top: content.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+
+</body>
+</html>
